@@ -5,8 +5,11 @@ class ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
-    @shop.save
-    redirect_to @shop
+    if @shop.save
+      redirect_to shop_path, notice: "画像を登録しました。"
+    else
+      render :new
+    end
   end
 
   def show
@@ -15,7 +18,7 @@ class ShopsController < ApplicationController
 
 
   private
-  def post_params
+  def shop_params
     params.require(:shop).permit(:store_name, :address, :phone_number, :open_hour, :image)
   end
 
