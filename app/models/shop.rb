@@ -1,5 +1,5 @@
 class Shop < ApplicationRecord
-  has_many_attached :image
+  has_one_attached :image
   validates :store_name, presence: true
   validates :address, presence: true
   validates :phone_number, presence: true

@@ -1,0 +1,17 @@
+<div class="col-6 mx-auto">
+  <% @shops.each do |shop| %>
+    <div class="card mb-5">
+      <%= link_to shop do %>
+        <!-- image_magickのメソッドを使用して画像サイズを変更して表示 -->
+        <% if shop.image.attached? %>
+          <%= image_tag shop.image.variant(resize_to_fill: [400, 400]).processed, class: "card-img" %>
+        <% else %>
+          <%= image_tag "no_image", class: "card-img" %>
+        <% end %>
+      <% end %>
+      <%# <div class="card-text"> %>
+        <%# <p><%= truncate(shop.caption, length: 300) %></p> 
+      <%# </div> %>
+    </div>
+  <% end %>
+</div>
