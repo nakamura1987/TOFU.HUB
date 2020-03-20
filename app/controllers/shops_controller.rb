@@ -9,6 +9,11 @@ class ShopsController < ApplicationController
     redirect_to @shop
   end
 
+  def show
+    @shop = Shop.find(params[:id])
+  end
+
+
   private
   def post_params
     params.require(:shop).permit(:store_name, :address, :phone_number, :open_hour, :image)

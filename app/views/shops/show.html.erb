@@ -1,0 +1,18 @@
+<div class="col-lg-8 mx-auto">
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-lg-7">
+        <% if @shop.image.attached? %>
+          <%= image_tag @shop.image.variant(resize_to_fill: [400, 400]).processed, class: "card-img" %>
+        <% else %>
+          <%= image_tag "no_image", class: "card-img" %>
+        <% end %>
+      </div>
+      <div class="col-lg-5">
+        <div class="card-body scroll">
+          <%= simple_format (@shop.caption) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
