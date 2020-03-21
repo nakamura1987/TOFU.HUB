@@ -1,6 +1,8 @@
-<div class="col-6 mx-auto">
+<div class="container">
+<div class="row">
+<%# <div class="col-12"> %>
   <% @shops.each do |shop| %>
-    <div class="card mb-5">
+    <div class="card col-3 mb-4">
       <%= link_to shop do %>
         <!-- image_magickのメソッドを使用して画像サイズを変更して表示 -->
         <% if shop.image.attached? %>
@@ -9,9 +11,15 @@
           <%= image_tag "no_image", class: "card-img" %>
         <% end %>
       <% end %>
-      <%# <div class="card-text"> %>
-        <%# <p><%= truncate(shop.caption, length: 300) %></p> 
-      <%# </div> %>
+      <div class="card-body">
+        <div class="card-title">
+          <p><%= shop.store_name %></p>
+        </div>
+        <h5><%= link_to "Go Tofu »", shops_path, class: "" %></h5>
+      </div>
     </div>
   <% end %>
+</div>
+</div>
+    <h4><%= link_to "Go Tofu »", shops_path, class: "text-white kasen border-h" %></h4>
 </div>
