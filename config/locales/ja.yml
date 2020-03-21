@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+      attributes:
+        shop:
+          store_name: 店舗名
+          address: 住所
+          phone_number: 電話番号
+          open_hour: 営業時間
+          map_url: マップのURL
+          image: 店舗画像

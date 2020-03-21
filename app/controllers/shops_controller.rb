@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+before_action :set_shop, only: [ :show, :edit, :update, :destroy]
   def index
     @shops = Shop.all
   end
@@ -17,15 +18,12 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find(params[:id])
   end
 
   def edit
-    @shop = Shop.find(params[:id])
   end
 
   def update
-    @shop = Shop.find(params[:id])
     if @shop.update(shop_params)
       redirect_to @shop, notice: "店舗情報を更新しました。"
     else
@@ -34,7 +32,6 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    @shop = Shop.find(params[:id])
     @shop.destroy
     redirect_to shops_path, notice: "店舗情報を削除しました。"
   end
@@ -42,6 +39,10 @@ class ShopsController < ApplicationController
   private
   def shop_params
     params.require(:shop).permit(:store_name, :address, :phone_number, :open_hour, :image, :map_url)
+  end
+
+  def set_shop
+    @shop = Shop.find(params[:id])
   end
 
 end

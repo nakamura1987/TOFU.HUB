@@ -1,0 +1,10 @@
+ja:
+  shops:
+    form:
+      back: 戻る
+      shop: 登録する
+    new:
+      title: 新規店舗登録
+    show:
+      edit: 編集する
+      delete: 店舗情報削除

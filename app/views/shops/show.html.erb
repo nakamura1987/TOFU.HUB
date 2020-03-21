@@ -13,10 +13,10 @@
 <iframe src=<%= @shop.map_url %> width="600" height="450" frameborder="0" style="border:0;" alloΩΩwfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
   <p>
-    <%= link_to "編集", edit_shop_path(@shop), class: "btn btn-block btn-primary" %>
+    <%= link_to t(".edit"), edit_shop_path(@shop), method: :get, class: "btn btn-block btn-primary" %>
   </p>
   <p>
-    <%= button_tag "削除", class: "btn btn-block btn-warning", data: { toggle: "modal", target: "#delete-shop" } %>
+    <%= button_tag t(".delete"), class: "btn btn-block btn-warning", data: { toggle: "modal", target: "#delete-shop" } %>
   </p>
 </div>
 
