@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      redirect_to @shop, notice: "画像を登録しました。"
+      redirect_to @shop, notice: "店舗情報を登録しました。"
     else
       render :new
     end
@@ -27,15 +27,21 @@ class ShopsController < ApplicationController
   def update
     @Sho = Shop.find(params[:id])
     if @shop.update(shop_params)
-      redirect_to @shop, notice: "投稿を更新しました。"
+      redirect_to @shop, notice: "店舗情報を更新しました。"
     else
       render :edit
     end
   end
 
+  def destroy
+    @shop = shop.find(params[:id])
+    @shop.destroy
+    redirect_to shops_path, notice: "店舗情報を削除しました。"
+  end
+
   private
   def shop_params
-    params.require(:shop).permit(:store_name, :address, :phone_number, :open_hour, :image)
+    params.require(:shop).permit(:store_name, :address, :phone_number, :open_hour, :image, :map_url)
   end
 
 end
