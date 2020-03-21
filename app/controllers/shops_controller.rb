@@ -25,7 +25,7 @@ class ShopsController < ApplicationController
   end
 
   def update
-    @Sho = Shop.find(params[:id])
+    @shop = Shop.find(params[:id])
     if @shop.update(shop_params)
       redirect_to @shop, notice: "店舗情報を更新しました。"
     else
@@ -34,7 +34,7 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    @shop = shop.find(params[:id])
+    @shop = Shop.find(params[:id])
     @shop.destroy
     redirect_to shops_path, notice: "店舗情報を削除しました。"
   end
