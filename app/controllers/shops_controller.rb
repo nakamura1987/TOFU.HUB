@@ -2,6 +2,9 @@ class ShopsController < ApplicationController
 before_action :set_shop, only: [ :show, :edit, :update, :destroy]
   def index
     @shops = Shop.all
+    @shops = Shop.page(params[:page])
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result
   end
 
   def new
@@ -13,6 +16,7 @@ before_action :set_shop, only: [ :show, :edit, :update, :destroy]
     if @shop.save
       redirect_to @shop, notice: "店舗情報を登録しました。"
     else
+      @shops = Shop.page(params[:page]).per(16)
       render :new
     end
   end

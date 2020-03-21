@@ -1,6 +1,5 @@
 <div class="container">
 <div class="row">
-<%# <div class="col-12"> %>
   <% @shops.each do |shop| %>
     <div class="card col-3 mb-4">
       <%= link_to shop do %>
@@ -23,3 +22,4 @@
 </div>
     <h4><%= link_to "Go Tofu »", shops_path, class: "text-white kasen border-h" %></h4>
 </div>
+
