@@ -5,6 +5,7 @@ class Shop < ApplicationRecord
   validates :phone_number, presence: true
   validates :open_hour, presence: true
   validates :map_url, presence: true
+  validates :caption, presence: true
   validate :image_check
 
   def image_check

@@ -7,6 +7,16 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     </ul>
     
+    <% if user_signed_in? %>
+      <%= link_to edit_user_registration_path, class: "nav-item" do %>
+        <i class="far fa-user"></i>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "nav-item" do %>
+        <i class="far fa-user"></i>
+      <% end %>
+    <% end %>
+    
     <%= search_form_for @q ,class: "nav-item form-inline mb-2 mb-lg-0" do |f| %>
       <%= f.search_field :store_name_or_address_cont, class: "form-control mr-sm-2", placeholder: "キーワードで検索" %>
       <%= f.submit "検索" %>

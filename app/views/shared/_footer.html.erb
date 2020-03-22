@@ -10,6 +10,17 @@
         <i class="fas fa-plus-square fa-2x coler-f"></i>
       <% end %>
     </li>
+      <li class="nav-item">
+      <% if user_signed_in? %>
+        <%= link_to edit_user_registration_path, class: "nav-link" do %>
+          <i class="far fa-user"></i>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path, class: "nav-link" do %>
+          <i class="far fa-user"></i>
+        <% end %>
+      <% end %>
+      </li>
   </ul>
   </div>
 </nav>
