@@ -6,15 +6,17 @@
 </div>
 
 <div class="col-lg-12">
-  <p>店舗名：<%= @shop.store_name %></p>
+  <div class="font-c">
+  <p><b>店舗名：<%= @shop.store_name %></b></p>
 
-  <p>住所：<%= @shop.address %></p>
+  <p><b>住所：<%= @shop.address %></b></p>
 
-  <p>電話番号：<%= @shop.phone_number %></p>
+  <p><b>電話番号：<%= @shop.phone_number %></b></p>
 
-  <p>営業時間：<%= @shop.open_hour %></p>
+  <p><b>営業時間：<%= @shop.open_hour %></b></p>
 
-  <p>一言コメント:<%= @shop.caption %></p>
+  <p><b>一言コメント:<%= @shop.caption %></b></p>
+  </div>
 
   <iframe src=<%= @shop.map_url %> width="510" height="450" frameborder="0" style="border:0;" alloΩΩwfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 

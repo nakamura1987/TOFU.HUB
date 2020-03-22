@@ -3,21 +3,21 @@
     <%# <a class="navbar-brand" href="/">Topページへ戻る</a> %>
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="/shops"><i class="fas fa-store-alt fa-2x coler-f"></i></a>
+      <a class="nav-link" href="/shops"><i class="fas fa-store-alt fa-2x"></i></a>
     </li>
     <li class="nav-item">
       <%= link_to new_shop_path, class: "nav-link" do %>
-        <i class="fas fa-plus-square fa-2x coler-f"></i>
+        <i class="fas fa-plus-square fa-2x"></i>
       <% end %>
     </li>
       <li class="nav-item">
       <% if user_signed_in? %>
         <%= link_to edit_user_registration_path, class: "nav-link" do %>
-          <i class="far fa-user"></i>
+          <i class="fas fa-smile fa-2x"></i>
         <% end %>
       <% else %>
         <%= link_to new_user_session_path, class: "nav-link" do %>
-          <i class="far fa-user"></i>
+          <i class="fas fa-smile fa-2x"></i>
         <% end %>
       <% end %>
       </li>

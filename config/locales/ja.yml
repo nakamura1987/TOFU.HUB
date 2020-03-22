@@ -8,3 +8,8 @@ ja:
           open_hour: 営業時間
           map_url: マップのURL
           image: 店舗画像
+          caption: 一言コメント
+        user:
+          email: メールアドレス
+          name: 名前
+          password: パスワード  
