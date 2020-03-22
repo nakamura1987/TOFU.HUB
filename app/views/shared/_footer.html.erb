@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom justify-content-center">
   <%# <div class="container"> %>
-    <%# <a class="navbar-brand" href="#">topへ戻る</a> %>
+    <%# <a class="navbar-brand" href="/">Topページへ戻る</a> %>
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link" href="/shops"><i class="fas fa-home"></i></a>
+      <a class="nav-link" href="/shops"><i class="fas fa-store-alt fa-2x coler-f"></i></a>
     </li>
     <li class="nav-item">
       <%= link_to new_shop_path, class: "nav-link" do %>
-        <i class="far fa-plus-square"></i>
+        <i class="fas fa-plus-square fa-2x coler-f"></i>
       <% end %>
     </li>
   </ul>

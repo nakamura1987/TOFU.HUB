@@ -1,25 +1,23 @@
 <div class="container">
-<div class="row">
-  <% @shops.each do |shop| %>
-    <div class="card col-3 mb-4">
-      <%= link_to shop do %>
-        <!-- image_magickのメソッドを使用して画像サイズを変更して表示 -->
-        <% if shop.image.attached? %>
-          <%= image_tag shop.image.variant(resize_to_fill: [400, 400]).processed, class: "card-img" %>
-        <% else %>
-          <%= image_tag "no_image", class: "card-img" %>
+  <div class="row">
+    <% @shops.each do |shop| %>
+      <div class="card text-dark bg-color border-dark mb-4 mr-1" style="width: 14rem;" >
+        <%= link_to shop do %>
+          <% if shop.image.attached? %>
+            <%= image_tag shop.image.variant(resize_to_fill: [400, 400]).processed, class: "card-img" %>
+          <% else %>
+            <%= image_tag "no_image", class: "card-img" %>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="card-body">
-        <div class="card-title">
-          <p><%= shop.store_name %></p>
+        <div class="card-body">
+          <div class="card-title">
+            <p><b><%= shop.store_name %></b></p>
+            <p class="card-text">iii</p>
+          </div>
+        <!--<h5><%= link_to "Go Tofu »", shop, class: "" %></h5>-->
         </div>
-        <h5><%= link_to "Go Tofu »", shop, class: "" %></h5>
       </div>
-    </div>
-  <% end %>
-</div>
-</div>
-    <h4><%= link_to "Go Tofu »", shops_path, class: "text-white kasen border-h" %></h4>
+    <% end %>
+  </div>
 </div>
 

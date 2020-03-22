@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.body {
+  background-image: url(tofu2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
